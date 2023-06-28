@@ -1,8 +1,8 @@
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 
-export default function Box({ bgColor }) {
+export default function Box({ bgColor, verifyColor }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => verifyColor(bgColor)}>
       <View style={[styles.box, {backgroundColor: bgColor}]}></View>
     </TouchableOpacity>
   );
@@ -10,8 +10,8 @@ export default function Box({ bgColor }) {
 
 const styles = StyleSheet.create({
   box: {
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: 10,
   },
 });
