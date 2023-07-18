@@ -1,8 +1,10 @@
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 
-export default function Box({ bgColor, verifyColor }) {
+export default function Box({ bgColor, verifyColor, isCorrect }) {
+  const handleClick = () => {};
+  
   return (
-    <TouchableOpacity onPress={() => verifyColor(bgColor)}>
+    <TouchableOpacity onPress={() => verifyColor(bgColor)} disabled={isCorrect}>
       <View style={[styles.box, {backgroundColor: bgColor}]}></View>
     </TouchableOpacity>
   );
